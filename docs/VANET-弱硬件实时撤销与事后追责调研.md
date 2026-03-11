@@ -208,7 +208,77 @@
 
 ---
 
-## 12. 参考资料（可直接放到答辩/PPT 最后一页）
+## 12. 联网补充：值得优先阅读的文献与资料
+
+### A. 如果导师只让你先读 6 篇/份，我建议优先这 6 个
+
+1. **B. Brecht et al., “A Security Credential Management System for V2X Communications,” IEEE T-ITS, 2018.**  
+   - 这是 **SCMS 架构** 的代表性论文，直接对应“伪名证书、隐私保护、撤销与治理分层”。
+   - 如果你要论证“这条路不是空想，而是有工业级架构支撑”，这篇最关键。[R9]
+
+2. **A. C. H. Chen et al., “Implementation and Performance Analysis of Security Credential Management System Based on IEEE 1609.2 and 1609.2.1 Standards,” IEEE ICMLANT, 2023.**  
+   - 这篇更偏 **实现与性能分析**，适合支撑“弱硬件 / 工程实现是否可行”的论点。[R11]
+
+3. **Z. Amjad et al., “Low Latency V2X Applications and Network Requirements: Performance Evaluation,” IEEE IV, 2018.**  
+   - 这篇更偏 **低时延业务需求**，适合论证为什么撤销传播和凭证管理不能拖慢 V2X 实时消息链路。[R10]
+
+4. **IEEE 1609.2-2022**  
+   - V2X 安全消息头和证书格式的核心标准；不读它，很难把方案讲“正”。[R7]
+
+5. **ETSI TS 102 941 / TS 103 097 / TS 103 759**  
+   - 分别对应 **信任与隐私管理 / 安全头与证书格式 / misbehaviour reporting**，几乎把你关心的问题串起来了。[R8]
+
+6. **ISO-TC204, Primer on ITS Cryptography**  
+   - 这是最适合入门串起全局的资料：SCMS / CCMS、伪名证书、Butterfly Key Expansion、CRL/CTL、Linkage Values 一条线都能看到。[R1]
+
+### B. 按主题分类的推荐阅读清单
+
+#### 1) 架构与信任根
+
+- **Brecht et al. (2018)**：看 SCMS 为什么要拆成多机构，以及为什么追责必须是“条件开链”而不是“默认可追踪”。[R9]
+- **IEEE 1609.2-2022**：看消息签名、证书封装、权限表达的基线。[R7]
+- **ETSI TS 102 941 / 103 097**：看欧系 C-ITS 如何落地信任和证书体系。[R8]
+
+#### 2) 撤销与分发
+
+- **ISO-TC204 Primer**：看 CRL / CTL、伪名证书轮换、Butterfly Key Expansion 与撤销传播之间的关系。[R1]
+- **Chen et al. (2023)**：看证书管理实现与性能分析，特别适合支撑“实现不是纸上谈兵”。[R11]
+- **SecureRoads_PKI README**：虽然不是论文，但它把 **Delta CRL / CTL management、Butterfly key expansion、ETSI TS 102 941 实现** 都放到一个可执行工程里，适合做工程参考。[R12]
+
+#### 3) 隐私保护与事后追责
+
+- **OpenSCMS Linkage Authority 文档**：理解为什么 Linkage Authority 是事后追责的核心，以及为什么该组件必须高敏隔离。[R5]
+- **ISO-TC204 Primer**：看 linkage values 如何做到“平时不可跟踪、事后可授权解析”。[R1]
+- **Brecht et al. (2018)**：看条件身份解析与系统治理边界。[R9]
+
+#### 4) 实时性与弱硬件可行性
+
+- **Amjad et al. (2018)**：理解低时延 V2X 应用的网络约束，说明为什么车端不能承担过重密码学和在线校验。[R10]
+- **FITSec README**：这个实现明确强调 **低内存、低 CPU、可在 ARM 上运行**，非常适合支撑“弱硬件可行性”这一判断。[R2]
+- **Jelloge/scms-v2x-cloud README**：虽然是课程项目，但它把 **QNX RTOS 客户端 + 云端 SCMS + 100ms BSM 签名 deadline** 放在一起讨论，很适合给导师看“实时性验证”的近年工程路线。[R13]
+
+### C. 这些文献对你的课题分别解决什么问题
+
+| 你的问题 | 最值得先读的文献/资料 | 读它的原因 |
+|---|---|---|
+| 能不能做？ | Brecht et al. 2018；IEEE 1609.2；ETSI TS 102 941 | 给出成熟架构与标准基线 |
+| 用什么密码学？ | IEEE 1609.2；ISO-TC204 Primer；FITSec | 明确 ECC、伪名证书、证书轮换的主流路线 |
+| 实时撤销怎么做？ | ISO-TC204 Primer；ETSI TS 103 759；Chen et al. 2023 | 把 CRL/CTL、误行为报告、实现性能串起来 |
+| 事后追责怎么做？ | OpenSCMS LA；Brecht et al. 2018；ISO-TC204 Primer | 解释条件开链、linkage values、多机构协作 |
+| 弱硬件能不能扛住？ | FITSec；Amjad et al. 2018；Chen et al. 2023 | 一边看资源约束，一边看性能与时延 |
+
+### D. 给导师看的“文献阅读顺序”
+
+1. **先读标准脉络**：IEEE 1609.2 → ETSI 102 941 / 103 097 / 103 759  
+2. **再读架构核心论文**：Brecht et al. 2018  
+3. **再读入门综述资料**：ISO-TC204 Primer  
+4. **最后看实现与性能**：Chen et al. 2023、FITSec、SecureRoads_PKI、Jelloge/scms-v2x-cloud  
+
+**一句话建议**：如果你接下来要写开题或汇报，最稳的方式不是先“发明一个新密码学方案”，而是先把 **标准 → SCMS 架构 → 撤销传播 → 条件追责 → 性能约束** 这条文献链讲顺。
+
+---
+
+## 13. 参考资料（可直接放到答辩/PPT 最后一页）
 
 - [R1] ISO-TC204, **Primer on ITS Cryptography**  
   https://github.com/ISO-TC204/ISO-TC204.github.io/blob/321cebfae1b4ce78b8ea282c5468ffe1acd9dd9a/docs/cybersecurity/primer-its-credentials.md
@@ -224,4 +294,10 @@
   https://github.com/ISO-TC204/ISO-TC204.github.io/blob/321cebfae1b4ce78b8ea282c5468ffe1acd9dd9a/docs/cybersecurity/its-security-standards.md
 - [R7] IEEE, **IEEE 1609.2-2022**（标准主页链接见 R2）
 - [R8] ETSI, **TS 103 097 / TS 102 941 / TS 103 759**（标准下载链接见 R2 / R3）
-
+- [R9] B. Brecht et al., **A Security Credential Management System for V2X Communications**, IEEE Transactions on Intelligent Transportation Systems, 2018（引文与入口见 R13）
+- [R10] Z. Amjad et al., **Low Latency V2X Applications and Network Requirements: Performance Evaluation**, IEEE Intelligent Vehicles Symposium, 2018（引文与入口见 R13）
+- [R11] A. C. H. Chen et al., **Implementation and Performance Analysis of Security Credential Management System Based on IEEE 1609.2 and 1609.2.1 Standards**, IEEE ICMLANT, 2023（引文与入口见 R13）
+- [R12] Mattyilmago, **SecureRoads_PKI README**  
+  https://github.com/Mattyilmago/SecureRoads_PKI/blob/e2dd5b533cbfdbde5a0723d8b54b3d22d600fa49/README.md
+- [R13] Jelloge, **Evaluating Cloud-Hosted SCMS Performance for C-V2X Using a QNX RTOS Client**  
+  https://github.com/Jelloge/scms-v2x-cloud/blob/3190ea8bf309dfa9d76bc1382fc50414c963f638/README.md
