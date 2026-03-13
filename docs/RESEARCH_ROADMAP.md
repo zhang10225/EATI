@@ -4,7 +4,8 @@
 
 > **目标会议**: IEEE GlobeCom  
 > **核心创新**: 将 EATI 信任基础设施思想移植到车联网（V2X）场景，结合 Agent 协同机制，实现高效的证书撤销与行为追责  
-> **本仓库原型代码**: `src/vehicular/` 目录
+> **本仓库原型代码**: `src/vehicular/` 目录  
+> **可复现实验清单**: 详见 [REPRODUCTION_CHECKLIST.md](./REPRODUCTION_CHECKLIST.md)（含近五年论文检索、实验设置记录、改进路径与参考文献列表）
 
 ---
 
