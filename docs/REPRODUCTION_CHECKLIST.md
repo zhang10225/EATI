@@ -631,7 +631,7 @@
 |------|----------|
 | 原始代码 | 未公开 |
 | 替代框架 | `charm-crypto` 提供了 BBS+ 基础实现 |
-| Hyperledger Ursa | https://github.com/nicosResworworworwor/ursa — 可作为匿名凭证实现参考 |
+| Hyperledger Ursa | https://github.com/hyperledger/ursa — 可作为匿名凭证实现参考 |
 
 #### 复现难点
 
