@@ -44,9 +44,9 @@
 - 加入 EATI 的不可变审计链思想作为追责证据
 
 **代表文献**:
-- Zhong, H., et al. "Conditional Privacy-Preserving Authentication Using Registration List in Vehicular Ad Hoc Networks." IEEE Transactions on Vehicular Technology, 2022.
-- Ming, Y., et al. "Efficient Privacy-Preserving Multi-Dimensional Data Aggregation Scheme in Smart Grid." IEEE Access, 2022.
-- Ali, I., et al. "An Efficient CPPA Scheme for Vehicular Networks." Vehicular Communications, 2023.
+- Imghoure, A., Omary, F., and El-Yahyaoui, A. "Schnorr-based conditional privacy-preserving authentication scheme with multisignature and batch verification in VANET." Internet of Things, vol. 23, 100850, 2023. DOI: 10.1016/j.iot.2023.100850
+- Wei, L., Cui, J., Zhong, H., Xu, Y., and Liu, L. "Proven Secure Tree-Based Authenticated Key Agreement for Securing V2V and V2I Communications in VANETs." IEEE Transactions on Mobile Computing, vol. 21, no. 9, pp. 3280–3297, 2022. DOI: 10.1109/TMC.2021.3056712
+- Baee, M.A.R., Simpson, L., Boyen, X., Foo, E., and Pieprzyk, J. "A Provably Secure and Efficient Cryptographic-Key Update Protocol for Connected Vehicles." IEEE Transactions on Dependable and Secure Computing, vol. 21, no. 4, pp. 4066–4083, 2024. DOI: 10.1109/TDSC.2023.3345406
 
 ---
 
@@ -68,9 +68,9 @@
 - EATI 的签名服务思想用于链上交易签名
 
 **代表文献**:
-- Lu, Z., et al. "Blockchain-Based Distributed Certificate Revocation." IEEE INFOCOM, 2022.
-- Singh, M., et al. "BlockCRev: A Blockchain-Based Certificate Revocation Scheme for VANETs." IEEE Transactions on Intelligent Transportation Systems, 2023.
-- Feng, Q., et al. "Blockchain-based Privacy-Preserving and Accountable Authentication for IoV." IEEE Transactions on Vehicular Technology, 2023.
+- Vangala, A., Das, A.K., Mitra, A., Das, S.K., and Park, Y. "Blockchain-Enabled Authenticated Key Agreement Scheme for Mobile Vehicles-Assisted Precision Agricultural IoT Networks." IEEE Transactions on Information Forensics and Security, vol. 18, pp. 904–919, 2023. DOI: 10.1109/TIFS.2022.3231121
+- Ning, Z., Sun, S., Wang, X., Guo, L., Guo, S., Hu, X., Hu, B., and Kwok, R.Y.-K. "Blockchain-Enabled Intelligent Transportation Systems: A Distributed Crowdsensing Framework." IEEE Transactions on Mobile Computing, vol. 21, no. 12, pp. 4201–4217, 2022. DOI: 10.1109/TMC.2021.3079984
+- Zhang, L., Li, J., and Yang, Y. "Message Linkable Group Signature With Information Binding and Efficient Revocation for Privacy-Preserving Announcement in VANETs." IEEE Transactions on Dependable and Secure Computing, vol. 21, no. 5, pp. 5667–5680, 2024. DOI: 10.1109/TDSC.2024.3381436
 
 ---
 
@@ -92,9 +92,9 @@
 - 引入 EATI 的证据链机制记录信任评估过程
 
 **代表文献**:
-- Li, W., et al. "Multi-Agent Trust Management Framework for Internet of Vehicles." IEEE Transactions on Intelligent Transportation Systems, 2023.
-- Chen, Q., et al. "Federated Learning-Based Trust Management for Connected Vehicles." IEEE GLOBECOM, 2022.
-- Yang, Z., et al. "Deep Reinforcement Learning Based Trust Management for VANETs." IEEE Transactions on Vehicular Technology, 2023.
+- Feng, X., Liu, H., Yang, H., Xie, Q., and Wang, L. "Batch-Aggregate: Efficient Aggregation for Private Federated Learning in VANETs." IEEE Transactions on Dependable and Secure Computing, vol. 21, no. 5, pp. 4939–4952, 2024. DOI: 10.1109/TDSC.2024.3364371
+- Farrell, M., Bradbury, M., Cardoso, R.C., Fisher, M., Dennis, L.A., Dixon, C., Sheik, A.T., Yuan, H., and Maple, C. "Security-Minded Verification of Cooperative Awareness Messages." IEEE Transactions on Dependable and Secure Computing, vol. 21, no. 4, pp. 4048–4065, 2024. DOI: 10.1109/TDSC.2023.3345543
+- Saputra, Y.M., Nguyen, D.N., Hoang, D.T., Vu, T.X., Dutkiewicz, E., and Chatzinotas, S. "Federated Learning Meets Contract Theory: Economic-Efficiency Framework for Electric Vehicle Networks." IEEE Transactions on Mobile Computing, vol. 21, no. 8, pp. 2803–2817, 2022. DOI: 10.1109/TMC.2020.3045987
 
 ---
 
@@ -116,9 +116,9 @@
 - Agent 协同审计: 多个审计 Agent 协同验证证据链
 
 **代表文献**:
-- Zhang, L., et al. "Accountable and Privacy-Preserving V2X Communication." IEEE Transactions on Dependable and Secure Computing, 2023.
-- He, D., et al. "Efficient Traceable and Linkable Group Signature for V2X." IEEE Transactions on Vehicular Technology, 2022.
-- Liu, J., et al. "Privacy-Preserving Accountability in V2X: A Practical Approach." ACM CCS Workshop on Automotive Cybersecurity, 2023.
+- Zhang, J., Su, S., Zhong, H., Cui, J., and He, D. "Identity-Based Broadcast Proxy Re-Encryption for Flexible Data Sharing in VANETs." IEEE Transactions on Information Forensics and Security, vol. 18, pp. 4830–4842, 2023. DOI: 10.1109/TIFS.2023.3299466
+- Yang, Y., Xue, W., Zhan, Y., Huang, M., Li, Y., and Deng, R.H. "AnoPay: Anonymous Payment for Vehicle Parking With Updatable Credential." IEEE Transactions on Dependable and Secure Computing, vol. 21, no. 3, pp. 1621–1638, 2024. DOI: 10.1109/TDSC.2023.3287228
+- Zhong, H., Wang, L., Cui, J., Zhang, J., and Bolodurina, I. "Secure Edge Computing-Assisted Video Reporting Service in 5G-Enabled Vehicular Networks." IEEE Transactions on Information Forensics and Security, vol. 18, pp. 3774–3786, 2023. DOI: 10.1109/TIFS.2023.3287731
 
 ---
 
@@ -140,9 +140,9 @@
 - 结合 EATI 的 TEE 规划（v1.2）保护检测模型隐私
 
 **代表文献**:
-- Kamel, J., et al. "Misbehavior Detection in V2X: A Survey." IEEE Communications Surveys & Tutorials, 2022.
-- Van der Heijden, R., et al. "Cooperative Misbehavior Detection with Edge Computing." IEEE Transactions on Intelligent Transportation Systems, 2023.
-- Gyawali, S., et al. "Machine Learning Based Misbehavior Detection in VANET." IEEE GLOBECOM, 2022.
+- Kamel, J., Wolf, M., van der Heijden, R., Kaiser, A., Urien, P., and Kargl, F. "VeReMi Extension: A Dataset for Comparable Evaluation of Misbehavior Detection in VANETs." ICC 2020 – IEEE International Conference on Communications, pp. 1–6, 2020. DOI: 10.1109/ICC40277.2020.9149132
+- Ali, M., Kaddoum, G., Li, W.-T., Yuen, C., Tariq, M., and Poor, H.V. "A Smart Digital Twin Enabled Security Framework for Vehicle-to-Grid Cyber-Physical Systems." IEEE Transactions on Information Forensics and Security, vol. 18, pp. 5258–5271, 2023. DOI: 10.1109/TIFS.2023.3305916
+- Yin, Z., Cheng, N., Luan, T.H., Song, Y., and Wang, W. "DT-Assisted Multi-Point Symbiotic Security in Space-Air-Ground Integrated Networks." IEEE Transactions on Information Forensics and Security, vol. 18, pp. 5721–5734, 2023. DOI: 10.1109/TIFS.2023.3313326
 
 ---
 
