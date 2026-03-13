@@ -302,13 +302,17 @@ src/vehicular/
 ├── CertificateRevocationManager.ts   # 证书撤销管理（Bloom Filter CRL）
 ├── AgentCollaborativeTrust.ts        # Agent 协同信任评估与撤销投票
 ├── AccountabilityTracer.ts           # 追责与证据链管理
+├── PerformanceBenchmark.ts           # 性能基准测试（GlobeCom 论文评估用）
+├── IntegrationScenario.ts            # 端到端集成场景（恶意行为/Sybil 攻击）
 └── index.ts                          # 模块导出
 
 tests/vehicular/
 ├── VehicleIdentityManager.test.ts
 ├── CertificateRevocationManager.test.ts
 ├── AgentCollaborativeTrust.test.ts
-└── AccountabilityTracer.test.ts
+├── AccountabilityTracer.test.ts
+├── PerformanceBenchmark.test.ts
+└── IntegrationScenario.test.ts
 ```
 
 ### 运行原型测试
@@ -324,12 +328,33 @@ npx jest tests/vehicular/
 npm test
 ```
 
+### 性能基准测试
+
+`PerformanceBenchmark` 模块提供 GlobeCom 论文所需的性能评估数据：
+
+| 基准项 | 方法 | 论文对应章节 |
+|---|---|---|
+| VID Hash 生成/验证 | `benchmarkVIDHashGeneration/Verification` | Crypto Overhead |
+| Bloom Filter vs 线性 CRL | `benchmarkRevocationQuery` | Revocation Efficiency |
+| Bloom Filter 误判率 | `benchmarkBloomFilterAccuracy` | CRL Accuracy |
+| Agent 协同延迟 | `benchmarkCollaborationLatency` | Collaboration Overhead |
+| Merkle Tree 构建/验证 | `benchmarkMerkleTreeOperations` | Accountability Overhead |
+| 端到端全流程 | `runFullBenchmark` | End-to-End Evaluation |
+
+### 集成场景
+
+`IntegrationScenario` 模块提供完整的端到端演示：
+
+1. **恶意行为场景** (`runMisbehaviorScenario`): 车辆注册 → 恶意行为检测 → 多 Agent 协同信任评估 → 投票撤销 → Bloom Filter CRL 更新 → Merkle Tree 存证 → 审计报告 → 身份追溯
+2. **Sybil 攻击场景** (`runSybilAttackScenario`): 攻击者注册 → 多假名证书颁发 → OBU 指纹异常检测 → 批量撤销 → 追责审计 → 身份追溯
+
 ### 如何扩展
 
 1. **集成仿真**: 将原型的 API 封装为 Python 可调用的 REST 服务
 2. **添加 ECC 支持**: 当前原型使用 RSA，可以切换到 ECDSA 以适配车联网
 3. **连接区块链**: 通过 Web3 接口连接以太坊测试网
 4. **联邦学习**: 在 Agent 协同模块中集成 FL 框架
+5. **性能对比**: 使用 `PerformanceBenchmark` 与基线方案（ECDSA, OCSP, 单 TA 撤销）进行对比
 
 ---
 
