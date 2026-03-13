@@ -16,5 +16,7 @@ export { VehicleIdentityManager } from './VehicleIdentityManager';
 export { CertificateRevocationManager, BloomFilter } from './CertificateRevocationManager';
 export { AgentCollaborativeTrust } from './AgentCollaborativeTrust';
 export { AccountabilityTracer } from './AccountabilityTracer';
+export { PerformanceBenchmark } from './PerformanceBenchmark';
+export { IntegrationScenario } from './IntegrationScenario';
 
 export * from './types';
