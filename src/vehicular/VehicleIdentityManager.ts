@@ -27,10 +27,11 @@ export class VehicleIdentityManager {
      * 生成 OBU 硬件指纹
      * 对应 EATI 的 DeviceFingerprint.generateAEID()
      * 在实际部署中，这些值来自 OBU 硬件的安全模块 (HSM/TPM)
+     * 使用 SHA-256 截断到 128 位 (32 hex chars)，提供足够的碰撞抵抗性
      *
      * @param obuSerial OBU 序列号
      * @param hardwareId OBU 硬件 ID
-     * @returns OBU 指纹哈希
+     * @returns OBU 指纹哈希 (128-bit)
      */
     public generateOBUFingerprint(obuSerial: string, hardwareId: string): string {
         const data = `obu|${obuSerial}|${hardwareId}`;
@@ -41,14 +42,15 @@ export class VehicleIdentityManager {
      * 生成网络标识指纹
      * 对应 EATI 的 DeviceFingerprint.getIpFingerprint()
      * 基于 V2X 通信特征生成
+     * 使用 SHA-256 截断到 128 位 (32 hex chars) 以确保足够的碰撞抵抗性
      *
      * @param v2xStationId V2X Station ID
      * @param macAddress 通信接口 MAC 地址
-     * @returns 网络指纹哈希
+     * @returns 网络指纹哈希 (128-bit)
      */
     public generateNetworkFingerprint(v2xStationId: string, macAddress: string): string {
         const data = `net|${v2xStationId}|${macAddress}`;
-        return crypto.createHash('sha256').update(data).digest('hex').substring(0, 16);
+        return crypto.createHash('sha256').update(data).digest('hex').substring(0, 32);
     }
 
     /**

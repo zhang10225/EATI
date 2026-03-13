@@ -41,6 +41,11 @@ export class AgentCollaborativeTrust {
         trustDecayRate: number = 0.05,
         votingTimeoutMs: number = 30000 // 30 秒
     ) {
+        // Validate that trust weights sum to 1.0
+        const weightSum = directTrustWeight + indirectTrustWeight;
+        if (Math.abs(weightSum - 1.0) > 1e-9) {
+            throw new Error(`Trust weights must sum to 1.0, got ${weightSum}`);
+        }
         this.directTrustWeight = directTrustWeight;
         this.indirectTrustWeight = indirectTrustWeight;
         this.trustDecayRate = trustDecayRate;

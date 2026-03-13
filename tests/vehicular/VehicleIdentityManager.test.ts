@@ -34,9 +34,9 @@ describe('VehicleIdentityManager', () => {
             expect(fp1).toBe(fp2);
         });
 
-        it('should return a 16-character hex string', () => {
+        it('should return a 32-character hex string', () => {
             const fp = manager.generateNetworkFingerprint('STATION-001', 'AA:BB:CC:DD:EE:FF');
-            expect(fp).toMatch(/^[0-9a-f]{16}$/);
+            expect(fp).toMatch(/^[0-9a-f]{32}$/);
         });
     });
 
@@ -48,7 +48,7 @@ describe('VehicleIdentityManager', () => {
 
             expect(identity.vin).toBe('VIN-12345');
             expect(identity.obuFingerprint).toMatch(/^[0-9a-f]{32}$/);
-            expect(identity.networkFingerprint).toMatch(/^[0-9a-f]{16}$/);
+            expect(identity.networkFingerprint).toMatch(/^[0-9a-f]{32}$/);
             expect(identity.registrationTimestamp).toBeGreaterThan(0);
         });
 

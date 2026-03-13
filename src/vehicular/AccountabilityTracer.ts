@@ -88,7 +88,9 @@ export class AccountabilityTracer {
 
         const nodes: string[] = [...leaves];
 
-        // 如果奇数个节点，复制最后一个
+        // Build tree bottom-up. When a level has an odd number of nodes,
+        // the last node is paired with itself (duplicated). This is a standard
+        // approach used in Bitcoin's Merkle tree implementation.
         while (nodes.length > 1) {
             const nextLevel: string[] = [];
             for (let i = 0; i < nodes.length; i += 2) {

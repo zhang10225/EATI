@@ -23,14 +23,9 @@ export class BloomFilter {
         this.bitArraySize = config.bitArraySize ||
             Math.ceil(-(config.expectedElements * Math.log(config.falsePositiveRate)) / (Math.log(2) ** 2));
 
-        // 计算最优哈希函数数量: k = (m/n) * ln(2)
+        // 计算最优哈希函数数量: k = (m/n) * ln(2)，确保最少 1 个
         this.hashFunctionCount = config.hashFunctionCount ||
-            Math.round((this.bitArraySize / config.expectedElements) * Math.log(2));
-
-        // 确保最少 1 个哈希函数
-        if (this.hashFunctionCount < 1) {
-            this.hashFunctionCount = 1;
-        }
+            Math.max(1, Math.round((this.bitArraySize / config.expectedElements) * Math.log(2)));
 
         this.bitArray = new Uint8Array(Math.ceil(this.bitArraySize / 8));
     }
