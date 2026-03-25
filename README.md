@@ -6,6 +6,11 @@
 
 ![img.png](img.png)
 
+## VANET / IoV 专项调研交付
+
+- 演示文稿：[`docs/vanet-eati-research.pptx`](docs/vanet-eati-research.pptx)
+- 可编辑源稿：[`docs/vanet-eati-research-deck.md`](docs/vanet-eati-research-deck.md)
+
 ## 背景与目标
 
 面向 **Moltbook / OpenClaw** 等"本地运行 + 去中心化协作"的 Agent 网络，解决以下核心挑战：
